@@ -55,6 +55,9 @@
   `unused_import` rule.  
   [Keith Smiley](https://github.com/keith)
 
+* Add `non_private_xctest_member` rule.  
+  [Keith Smiley](https://github.com/keith)
+
 #### Bug Fixes
 
 * None.
