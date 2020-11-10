@@ -80,6 +80,7 @@ public let primaryRuleList = RuleList(rules: [
     InertDeferRule.self,
     IsDisjointRule.self,
     JoinedDefaultParameterRule.self,
+    KeyPathExpressionAsFunctionRule.self,
     LargeTupleRule.self,
     LastWhereRule.self,
     LeadingWhitespaceRule.self,
