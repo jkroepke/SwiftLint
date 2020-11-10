@@ -64,6 +64,12 @@ public struct UnusedDeclarationRule: AutomaticTestableRule, ConfigurationProvide
                 }
             }
             _ = ResponseModel()
+            """),
+            Example("""
+            import XCTest
+            class MyTests: XCTestCase {
+                func testExample() {}
+            }
             """)
         ],
         triggeringExamples: [
@@ -84,6 +90,12 @@ public struct UnusedDeclarationRule: AutomaticTestableRule, ConfigurationProvide
             class ↓ResponseModel {
                 func ↓foo() {
                 }
+            }
+            """),
+            Example("""
+            import XCTest
+            class ↓MyTests: NSObject {
+                func ↓testExample() {}
             }
             """)
         ],
