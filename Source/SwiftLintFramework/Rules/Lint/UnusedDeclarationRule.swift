@@ -70,7 +70,14 @@ public struct UnusedDeclarationRule: AutomaticTestableRule, ConfigurationProvide
             class MyTests: XCTestCase {
                 func testExample() {}
             }
-            """)
+            """),
+            Example("""
+            import XCTest
+            open class BestTestCase: XCTestCase {}
+            class MyTests: BestTestCase {
+                func testExample() {}
+            }
+            """, configuration: ["custom_test_classes": ["BestTestCase"]])
         ],
         triggeringExamples: [
             Example("""
@@ -97,7 +104,14 @@ public struct UnusedDeclarationRule: AutomaticTestableRule, ConfigurationProvide
             class ↓MyTests: NSObject {
                 func ↓testExample() {}
             }
-            """)
+            """),
+            Example("""
+            import XCTest
+            open class NotMyBestTestCase: XCTestCase {}
+            class MyTests: NotMyBestTestCase {
+                func ↓testExample() {}
+            }
+            """, configuration: ["custom_test_classes": ["BestTestCase"]])
         ],
         requiresFileOnDisk: true
     )
